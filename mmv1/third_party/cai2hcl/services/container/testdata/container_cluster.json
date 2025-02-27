@@ -1,0 +1,84 @@
+[
+  {
+    "name": "//container.googleapis.com/projects/my-project/locations/us-central1/clusters/my-cluster",
+    "asset_type": "container.googleapis.com/Cluster",
+    "resource": {
+      "version": "v1",
+      "discovery_document_uri": "https://container.googleapis.com/$discovery/rest",
+      "discovery_name": "Cluster",
+      "data": {
+        "name": "my-cluster",
+        "description": "A GKE cluster for testing",
+        "initialNodeCount": 1,
+        "nodeConfig": {
+          "machineType": "e2-medium",
+          "diskSizeGb": 100,
+          "oauthScopes": [
+            "https://www.googleapis.com/auth/cloud-platform"
+          ],
+          "metadata": {
+            "disable-legacy-endpoints": "true"
+          },
+          "imageType": "COS_CONTAINERD",
+          "serviceAccount": "default",
+          "diskType": "pd-standard"
+        },
+        "network": "projects/my-project/global/networks/default",
+        "subnetwork": "projects/my-project/regions/us-central1/subnetworks/default",
+        "locations": [
+          "us-central1-a",
+          "us-central1-b",
+          "us-central1-c"
+        ],
+        "location": "us-central1",
+        "loggingService": "logging.googleapis.com/kubernetes",
+        "monitoringService": "monitoring.googleapis.com/kubernetes",
+        "masterAuth": {
+          "clusterCaCertificate": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCiVWVVQVVRUlRlZVElRlQ0ZW=="
+        },
+        "networkConfig": {
+          "network": "projects/my-project/global/networks/default",
+          "subnetwork": "projects/my-project/regions/us-central1/subnetworks/default",
+          "enableIntraNodeVisibility": true
+        },
+        "addonsConfig": {
+          "httpLoadBalancing": {
+            "disabled": false
+          },
+          "horizontalPodAutoscaling": {
+            "disabled": false
+          },
+          "networkPolicyConfig": {
+            "disabled": true
+          }
+        },
+        "ipAllocationPolicy": {
+          "useIpAliases": true,
+          "clusterIpv4CidrBlock": "10.52.0.0/14",
+          "servicesIpv4CidrBlock": "10.56.0.0/20"
+        },
+        "privateClusterConfig": {
+          "enablePrivateNodes": true,
+          "enablePrivateEndpoint": false,
+          "masterIpv4CidrBlock": "172.16.0.16/28"
+        },
+        "releaseChannel": {
+          "channel": "REGULAR"
+        },
+        "workloadIdentityConfig": {
+          "workloadPool": "my-project.svc.id.goog"
+        },
+        "resourceLabels": {
+          "environment": "test"
+        },
+        "networkPolicy": {
+          "enabled": false,
+          "provider": "PROVIDER_UNSPECIFIED"
+        },
+        "databaseEncryption": {
+          "state": "DECRYPTED"
+        }
+      }
+    }
+  }
+]
